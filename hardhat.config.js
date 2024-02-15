@@ -1,4 +1,9 @@
 require("@nomicfoundation/hardhat-toolbox");
+require('dotenv').config();
+
+const accounts = {
+  mnemonic: process.env.MNEMONIC
+};
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
