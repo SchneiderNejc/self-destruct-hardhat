@@ -29,6 +29,11 @@ describe("Self Destruct", function () {
             console.log(actualAddress);
             expect(await destruct.owner()).to.equal(owner.address); // Compare with the address of the owner
         });
+        it("Owner should receive funds", async function () {
+            const { owner, token, initSupply } = await loadFixture(deployContracts);
+            //console.log(ethers.getAddress("0"));
+            expect(await token.balanceOf(owner.address)).to.equal(initSupply);
+        });
     });
 
 
