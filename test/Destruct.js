@@ -39,6 +39,12 @@ describe("Self Destruct", function () {
             await expect(Destruct.deploy(ethers.ZeroAddress))
                 .to.be.revertedWith("Cant be zero");
         });
+        it("Should fail if token address is owner", async function () {
+            const [owner] = await ethers.getSigners();
+            const Destruct = await ethers.getContractFactory("Destruct");
+            await expect(Destruct.deploy(owner.address))
+                .to.be.revertedWith("Cant be owner");
+        });
     });
 
 
