@@ -34,6 +34,11 @@ describe("Self Destruct", function () {
             //console.log(ethers.getAddress("0"));
             expect(await token.balanceOf(owner.address)).to.equal(initSupply);
         });
+        it("Should fail if token address is zero", async function () {
+            const Destruct = await ethers.getContractFactory("Destruct");
+            await expect(Destruct.deploy(ethers.ZeroAddress))
+                .to.be.revertedWith("Invalid address");
+        });
     });
 
 
