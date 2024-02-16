@@ -23,7 +23,7 @@ contract Destruct {
     }
 
     modifier onlyOwner() {
-        require(owner == msg.sender, "caller is not the owner");
+        require(owner == msg.sender, "Caller is not the owner");
         _;
     }
 
