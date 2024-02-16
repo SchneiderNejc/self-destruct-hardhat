@@ -17,6 +17,7 @@ contract Destruct {
     /// @param _token ERC20 token address that will be refunded upon selfdestruct
     constructor(address _token) {
         owner = msg.sender;
+        require(_token != address(0), "Cant be zero");
         token = IERC20(_token);
     }
 
