@@ -47,8 +47,18 @@ describe("Self Destruct", function () {
         });
     });
 
+    describe("Deposits", function () {
+        it("Should receive tokens", async function () {
+            const { token, destruct } = await loadFixture(deployContracts);
 
+            let tokensToSend = 5000;
+            await token.transfer(destruct.target, tokensToSend);
 
+            destructTokenBalance = parseInt(await token.balanceOf(destruct.target));
+            
+            expect(destructTokenBalance).to.equal(tokensToSend);
+        });
+    });
 
 
 });
