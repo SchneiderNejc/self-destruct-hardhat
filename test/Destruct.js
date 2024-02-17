@@ -92,6 +92,19 @@ describe("Self Destruct", function () {
             expect(balanceAfter).to.be.gte(lowerBound);
             expect(balanceAfter).to.be.lte(upperBound);
         });
+        it("Should receive tokens", async function () {
+            const { owner, token, destruct } = await loadFixture(deployContracts);
+
+            //send tokens to contract
+            let tokensToSend = 5000;
+            await token.transfer(destruct.target, tokensToSend);
+            let balanceBefore = parseInt(await token.balanceOf(owner));
+
+            await destruct.destroy(owner);
+            let balanceAfter = parseInt(await token.balanceOf(owner));
+
+            expect(balanceAfter).to.equal(balanceBefore + tokensToSend);
+        });
     });
     describe("Selfdestruct", function () {
         //only owner can call
