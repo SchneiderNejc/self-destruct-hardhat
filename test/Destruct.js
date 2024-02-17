@@ -48,7 +48,7 @@ describe("Self Destruct", function () {
     });
 
     describe("Deposits", function () {
-        it("Should receive tokens", async function () {
+        it("Should deposit tokens", async function () {
             const { token, destruct } = await loadFixture(deployContracts);
 
             let tokensToSend = 5000;
@@ -58,7 +58,7 @@ describe("Self Destruct", function () {
             
             expect(destructTokenBalance).to.equal(tokensToSend);
         });
-        it("Should receive ether", async function () {
+        it("Should deposit ether", async function () {
             const { owner, destruct } = await loadFixture(deployContracts);
 
             const amountEther = ethers.parseEther("5");
