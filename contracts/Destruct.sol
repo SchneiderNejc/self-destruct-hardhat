@@ -32,6 +32,8 @@ contract Destruct {
     }
 
     /// @notice Contract can receive native and custom ERC20, ERC721
+    /// @notice Sending any token other then the one defined in
+    ///         constructor will result in permanent loss.
     receive() external payable {}
 
 /*     function deposit() external payable { 
