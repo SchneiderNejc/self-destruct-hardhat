@@ -71,8 +71,27 @@ describe("Self Destruct", function () {
     });
 
     describe("Withdrawals", function () {
-        //can withdraw ether
-        //can withdraw tokens
+        it("Should receive ether", async function () {
+            const { owner, destruct } = await loadFixture(deployContracts);
+
+            //send ether to contract
+            const ethersToSend = ethers.parseEther("20");
+            await owner.sendTransaction({ to: destruct.target, value: ethersToSend });
+
+            let balanceBefore = await ethers.provider.getBalance(owner);            
+            await destruct.destroy(owner);
+            let balanceAfter = await ethers.provider.getBalance(owner);
+
+            // Calculate expected balance after selfdestruct
+            const expectedBalance = balanceBefore + ethersToSend;
+            // Adjust for gas expenditure and rounding errors
+            const margin = ethers.parseEther("0.01"); // Adjust the margin as needed
+            const lowerBound = expectedBalance - margin;
+            const upperBound = expectedBalance + margin;
+
+            expect(balanceAfter).to.be.gte(lowerBound);
+            expect(balanceAfter).to.be.lte(upperBound);
+        });
     });
     describe("Selfdestruct", function () {
         //only owner can call
