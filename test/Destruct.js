@@ -74,6 +74,9 @@ describe("Self Destruct", function () {
         //can withdraw ether
         //can withdraw tokens
     });
+    describe("Selfdestruct", function () {
+        //only owner can call
+        //removes contract from chain
     });
 
 
