@@ -58,6 +58,22 @@ describe("Self Destruct", function () {
             
             expect(destructTokenBalance).to.equal(tokensToSend);
         });
+        it("Should receive ether", async function () {
+            const { owner, destruct } = await loadFixture(deployContracts);
+
+            const amountEther = ethers.parseEther("5");
+            await owner.sendTransaction({ to: destruct.target, value: amountEther });
+
+            const destructEtherBalance = ethers.formatEther(await ethers.provider.getBalance(destruct.target));
+
+            expect(destructEtherBalance).to.equal(ethers.formatUnits(amountEther, "ether"));
+        });
+    });
+
+    describe("Withdrawals", function () {
+        //can withdraw ether
+        //can withdraw tokens
+    });
     });
 
 
