@@ -113,6 +113,15 @@ describe("Self Destruct", function () {
             await expect(destruct.connect(user).destroy(owner))
                 .to.be.revertedWith("Caller is not the owner");
         });
+        it("Should remove contract from the chain", async function () {
+            const { owner, destruct } = await loadFixture(deployContracts);
+
+            await destruct.destroy(owner);
+
+            let code = await ethers.provider.getCode(destruct.target);
+
+            expect(code).to.equal("0x");
+        });
     });
     describe("Events", function () {
 
