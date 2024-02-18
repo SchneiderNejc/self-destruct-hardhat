@@ -8,7 +8,7 @@ const { expect } = require("chai");
 describe("Self Destruct", function () {
 
     async function deployContracts() {
-        const [owner] = await ethers.getSigners(); // Access the first signer from the array
+        const [owner, user] = await ethers.getSigners(); // Access the first signer from the array
 
         var initSupply = 10 ** 6;
         const GLDToken = await ethers.getContractFactory("GLDToken");
@@ -17,7 +17,7 @@ describe("Self Destruct", function () {
         const Destruct = await ethers.getContractFactory("Destruct");
         const destruct = await Destruct.deploy(token.target);
 
-        return { owner, token, destruct, initSupply };
+        return { owner, user, token, destruct, initSupply };
     }
 
     describe("Deployment", function () {
