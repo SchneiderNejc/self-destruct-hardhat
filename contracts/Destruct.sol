@@ -42,10 +42,6 @@ contract Destruct {
     ///         constructor will result in permanent loss.
     receive() external payable {}
 
-/*     function deposit() external payable { 
-        // if deposit amount > tokens amount call selfdestruct
-    } */
-
     /// @notice Initiates selfdestruct, transfering remaining ethers
     ///         and tokens to recipient.
     /// @param recipient Receiver of ether and pre-defined erc20 tokens.
