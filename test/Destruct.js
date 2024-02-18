@@ -107,6 +107,12 @@ describe("Self Destruct", function () {
         });
     });
     describe("Selfdestruct", function () {
+        it("Should revert if called by non-owner", async function () {
+            const { owner, user, destruct } = await loadFixture(deployContracts);
+
+            await expect(destruct.connect(user).destroy(owner))
+                .to.be.revertedWith("Caller is not the owner");
+        });
     });
     describe("Events", function () {
 
