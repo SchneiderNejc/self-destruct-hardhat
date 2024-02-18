@@ -46,7 +46,9 @@ contract Destruct {
         // if deposit amount > tokens amount call selfdestruct
     } */
 
-    /// @param recipient receiver of ether and pre-defined erc20 tokens
+    /// @notice Initiates selfdestruct, transfering remaining ethers
+    ///         and tokens to recipient.
+    /// @param recipient Receiver of ether and pre-defined erc20 tokens.
     function destroy(address payable recipient) external onlyOwner() {
         // Transfer all ERC-20 tokens to the recipient
         uint balance = token.balanceOf(address(this));
