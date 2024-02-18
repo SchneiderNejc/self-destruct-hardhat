@@ -106,6 +106,7 @@ describe("Self Destruct", function () {
             expect(balanceAfter).to.equal(balanceBefore + tokensToSend);
         });
     });
+
     describe("Selfdestruct", function () {
         it("Should revert if called by non-owner", async function () {
             const { owner, user, destruct } = await loadFixture(deployContracts);
@@ -123,6 +124,7 @@ describe("Self Destruct", function () {
             expect(code).to.equal("0x");
         });
     });
+
     describe("Events", function () {
         it("Should emit an event on selfdestruct", async function () {
             const { owner, token, destruct } = await loadFixture(deployContracts);
