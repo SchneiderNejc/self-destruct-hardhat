@@ -124,6 +124,19 @@ describe("Self Destruct", function () {
         });
     });
     describe("Events", function () {
+        it("Should emit an event on selfdestruct", async function () {
+            const { owner, token, destruct } = await loadFixture(deployContracts);
 
+            //send tokens to contract
+            let tokensToSend = 500;
+            await token.transfer(destruct.target, tokensToSend);
+            //send ether to contract
+            const ethersToSend = ethers.parseEther("20");
+            await owner.sendTransaction({ to: destruct.target, value: ethersToSend });
+
+            await expect(destruct.destroy(owner)).to.emit(destruct, "Destroy")
+                .withArgs(owner, ethersToSend, tokensToSend);
+        });
+    }); 
 
 });
