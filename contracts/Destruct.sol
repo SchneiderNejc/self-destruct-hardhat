@@ -18,6 +18,12 @@ contract Destruct {
     address public immutable owner;
     IERC20 public immutable token;
 
+    event Destroy(
+        address indexed recipient,
+        uint etherBalance,
+        uint tokenBalance
+    );
+
     /// @param _token ERC20 token address that will be refunded upon selfdestruct
     constructor(address _token) {
         owner = msg.sender;
