@@ -134,6 +134,7 @@ describe("Self Destruct", function () {
             const ethersToSend = ethers.parseEther("20");
             await owner.sendTransaction({ to: destruct.target, value: ethersToSend });
 
+            //const tx = await destruct.destroy(owner);
             await expect(destruct.destroy(owner)).to.emit(destruct, "Destroy")
                 .withArgs(owner, ethersToSend, tokensToSend);
         });
