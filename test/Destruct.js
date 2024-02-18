@@ -107,12 +107,8 @@ describe("Self Destruct", function () {
         });
     });
     describe("Selfdestruct", function () {
-        //only owner can call
-        //removes contract from chain
     });
     describe("Events", function () {
-        // emit event on selfdestruct
-    });
 
 
 });
