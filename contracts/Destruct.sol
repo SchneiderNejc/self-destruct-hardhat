@@ -51,6 +51,10 @@ contract Destruct {
         // Transfer all ERC-20 tokens to the recipient
         uint256 balance = token.balanceOf(address(this));
         token.transfer(recipient, balance);
+
+        // Event has to be emitted before selfdestruct
+        emit Destroy(recipient, address(this).balance, balance);
+
         selfdestruct(recipient);
     }  
 
