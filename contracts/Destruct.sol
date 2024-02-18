@@ -49,7 +49,7 @@ contract Destruct {
     /// @param recipient receiver of ether and pre-defined erc20 tokens
     function destroy(address payable recipient) external onlyOwner() {
         // Transfer all ERC-20 tokens to the recipient
-        uint256 balance = token.balanceOf(address(this));
+        uint balance = token.balanceOf(address(this));
         token.transfer(recipient, balance);
 
         // Event has to be emitted before selfdestruct
