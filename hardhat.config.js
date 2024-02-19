@@ -24,6 +24,10 @@ module.exports = {
       url: "https://optimism-sepolia.infura.io/v3/" + process.env.INFURA_KEY,
       accounts: accounts
     },
+    polygonSepolia: { //Amoy
+      url: "https://polygon-amoy.infura.io/v3/" + process.env.INFURA_KEY,
+      accounts: accounts
+    },
       accounts: accounts
     }
   },
