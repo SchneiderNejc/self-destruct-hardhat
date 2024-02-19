@@ -32,6 +32,10 @@ module.exports = {
       url: "https://rpc.public.zkevm-test.net",
       accounts: accounts
     },
+    celoTestnet: { //Alfajores
+      url: "https://celo-alfajores.infura.io/v3/" + process.env.INFURA_KEY,
+      accounts: accounts
+    },
       accounts: accounts
     }
   },
