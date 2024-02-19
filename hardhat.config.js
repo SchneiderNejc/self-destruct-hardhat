@@ -28,6 +28,10 @@ module.exports = {
       url: "https://polygon-amoy.infura.io/v3/" + process.env.INFURA_KEY,
       accounts: accounts
     },
+    polygonZkevmTestnet: { //Goerli based, TB deprecated
+      url: "https://rpc.public.zkevm-test.net",
+      accounts: accounts
+    },
       accounts: accounts
     }
   },
