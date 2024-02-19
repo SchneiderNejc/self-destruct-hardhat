@@ -36,6 +36,10 @@ module.exports = {
       url: "https://celo-alfajores.infura.io/v3/" + process.env.INFURA_KEY,
       accounts: accounts
     },
+    arbitrumSepolia: {
+      url: "https://arbitrum-sepolia.infura.io/v3/" + process.env.INFURA_KEY,
+      accounts: accounts
+    },
       accounts: accounts
     }
   },
