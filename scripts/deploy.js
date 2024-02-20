@@ -14,9 +14,9 @@ async function main() {
   await gldToken.waitForDeployment();
   console.log(`gldToken deployed to ${gldToken.target}`);
 
-  const gameNft = await hre.ethers.deployContract("GameNft");
+/*   const gameNft = await hre.ethers.deployContract("GameNft");
   await gameNft.waitForDeployment();
-  console.log(`gameNft deployed to ${gameNft.target}`);
+  console.log(`gameNft deployed to ${gameNft.target}`); */
 
   const destruct = await hre.ethers.deployContract("Destruct", [gldToken.target]);
   await destruct.waitForDeployment();
