@@ -24,15 +24,15 @@ module.exports = {
       url: "https://optimism-sepolia.infura.io/v3/" + process.env.INFURA_KEY,
       accounts: accounts
     },
-    polygonSepolia: { //Amoy
+    polygonAmoy: { //Sepolia
       url: "https://polygon-amoy.infura.io/v3/" + process.env.INFURA_KEY,
       accounts: accounts
     },
-    polygonZkevmTestnet: { //Goerli based, TB deprecated
+    polygonZkEVMTestnet: { //Goerli based, TB deprecated
       url: "https://rpc.public.zkevm-test.net",
       accounts: accounts
     },
-    celoTestnet: { //Alfajores
+    celoAlfajores: { //Testnet
       url: "https://celo-alfajores.infura.io/v3/" + process.env.INFURA_KEY,
       accounts: accounts
     },
