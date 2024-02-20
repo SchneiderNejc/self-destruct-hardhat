@@ -7,6 +7,12 @@ const accounts = {
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
+  etherscan: {
+    apiKey: {
+      bscTestnet: process.env.BSC,
+      sepolia: process.env.SEPOLIA
+    }
+  },
   //defaultNetwork: "localhost",
   networks: {
     hardhat: {
