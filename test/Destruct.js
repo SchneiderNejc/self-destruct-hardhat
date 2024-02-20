@@ -23,15 +23,10 @@ describe("Self Destruct", function () {
     describe("Deployment", function () {
         it("Should set the correct owner", async function () {
             const { owner, destruct } = await loadFixture(deployContracts);
-            console.log("Owner address:", owner.address);
-
-            const actualAddress = await destruct.owner();
-            console.log(actualAddress);
             expect(await destruct.owner()).to.equal(owner.address); // Compare with the address of the owner
         });
         it("Owner should receive funds", async function () {
             const { owner, token, initSupply } = await loadFixture(deployContracts);
-            //console.log(ethers.getAddress("0"));
             expect(await token.balanceOf(owner.address)).to.equal(initSupply);
         });
         it("Should fail if token address is zero", async function () {
