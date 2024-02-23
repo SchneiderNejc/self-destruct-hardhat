@@ -44,7 +44,7 @@ module.exports = {
       accounts: accounts
     },
     celoAlfajores: { //Testnet
-      url: "https://celo-alfajores.infura.io/v3/" + process.env.INFURA_KEY,
+      url: "https://celo-alfajores.infura.io/v3/" + vars.get("INFURA_KEY"),
       accounts: accounts
     },
     arbitrumSepolia: {
