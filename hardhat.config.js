@@ -9,8 +9,8 @@ const accounts = {
 module.exports = {
   etherscan: {
     apiKey: {
-      sepolia: process.env.SEPOLIA
       bscTestnet: vars.get("BSC"),
+      sepolia: vars.get("SEPOLIA")
     }
   },
   //defaultNetwork: "localhost",
