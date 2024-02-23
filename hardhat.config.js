@@ -15,8 +15,13 @@ module.exports = {
   },
   //defaultNetwork: "localhost",
   networks: {
+    // local networks
     hardhat: {
     },
+    ganache: {
+      url: 'http://127.0.0.1:9545'
+    },
+    // test networks
     sepolia: {
       url: "https://sepolia.infura.io/v3/" + process.env.INFURA_KEY,
       //chainId: 11155111,  //chainId is optional
