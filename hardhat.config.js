@@ -48,7 +48,7 @@ module.exports = {
       accounts: accounts
     },
     arbitrumSepolia: {
-      url: "https://arbitrum-sepolia.infura.io/v3/" + process.env.INFURA_KEY,
+      url: "https://arbitrum-sepolia.infura.io/v3/" + vars.get("INFURA_KEY"),
       accounts: accounts
     },
     avalancheTestnet: { //Fuji (C-Chain), built on top of Avalanche mainnet
