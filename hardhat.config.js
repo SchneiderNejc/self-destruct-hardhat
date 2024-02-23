@@ -58,6 +58,12 @@ module.exports = {
   },
   solidity: {
     version: "0.8.13"
+    //TODO add optimizer options
+  },
+
+
+}
+
 //TODO update this function to print the accounts from env mnemonic
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   const accounts = await hre.ethers.getSigners();
