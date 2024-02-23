@@ -36,7 +36,7 @@ module.exports = {
       accounts: accounts
     },
     polygonAmoy: { //Sepolia
-      url: "https://polygon-amoy.infura.io/v3/" + process.env.INFURA_KEY,
+      url: "https://polygon-amoy.infura.io/v3/" + vars.get("INFURA_KEY"),
       accounts: accounts
     },
     polygonZkEVMTestnet: { //Goerli based, TB deprecated
