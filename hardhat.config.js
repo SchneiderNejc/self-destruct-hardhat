@@ -32,7 +32,7 @@ module.exports = {
       accounts: accounts
     },
     optimismSepolia: {
-      url: "https://optimism-sepolia.infura.io/v3/" + process.env.INFURA_KEY,
+      url: "https://optimism-sepolia.infura.io/v3/" + vars.get("INFURA_KEY"),
       accounts: accounts
     },
     polygonAmoy: { //Sepolia
