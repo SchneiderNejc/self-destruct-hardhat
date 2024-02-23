@@ -2,7 +2,7 @@ require("@nomicfoundation/hardhat-toolbox");
 require('dotenv').config();
 
 const accounts = {
-  mnemonic: process.env.MNEMONIC
+  mnemonic: vars.get("MNEMONIC")
 };
 
 /** @type import('hardhat/config').HardhatUserConfig */
