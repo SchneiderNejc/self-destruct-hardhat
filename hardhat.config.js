@@ -23,7 +23,7 @@ module.exports = {
     },
     // test networks
     sepolia: {
-      url: "https://sepolia.infura.io/v3/" + process.env.INFURA_KEY,
+      url: "https://sepolia.infura.io/v3/" + vars.get("INFURA_KEY"),
       //chainId: 11155111,  //chainId is optional
       accounts: accounts //to deploy from second account, use [accounts[1]]
     },
