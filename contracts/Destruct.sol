@@ -48,7 +48,7 @@ contract Destruct {
     function destroy(address payable recipient) external onlyOwner() {
         // Transfer all ERC-20 tokens to the recipient
         uint balance = token.balanceOf(address(this));
-        token.transfer(recipient, balance);
+        require(token.transfer(recipient, balance), "Transfer failed");
 
         // Event has to be emitted before selfdestruct
         emit Destroy(recipient, address(this).balance, balance);
