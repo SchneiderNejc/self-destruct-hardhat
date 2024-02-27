@@ -29,3 +29,15 @@ A sample project serving as a compilation/deployment/testing hardhat framework, 
 | npx hardhat flatten contracts/GLDToken.sol | for manual contract verification | 
 | npx hardhat accounts | run task accounts. Task is added to npx hardhat help | 
 | npx hardhat console [--no-compile] | open NodeJS JavaScript console with builtin config and ether objects | 
+
+### Configuration variables
+| Command| Description | 
+| ------ | ----------- | 
+| npm install --global hardhat-shorthand | install binary to simplyfy input. Use hh compile instead of npx hardhat compile | 
+| hardhat-completion install | requirement for hardhat-shorthand | 
+| npx hardhat vars path | find location of configuration variables on the HDD | 
+| npx hardhat vars set TEST_API_KEY | set variable, create it if it doesn't exist| 
+| npx hardhat vars get TEST_API_KEY | prints the preset variable | 
+| npx hardhat vars list | prints all config variables stored locally | 
+| npx hardhat vars delete TEST_API_KEY | remove config variable | 
+| npx hardhat vars setup | list all variables used by project, useful to identify what's needed | 
