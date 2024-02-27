@@ -25,3 +25,7 @@ A sample project serving as a compilation/deployment/testing hardhat framework, 
 | npx hardhat run scripts/deploy.js [--network localhost] | deploy contracts in: scripts/ | 
 | npx hardhat node | start local node at http://127.0.0.1:8545 | 
 | npx hardhat coverage | print full tests coverage | 
+| npx hardhat verify --network sepolia 0x56ae34F87eA05752C0A071CF0bc15EC68625d6d1 --contract contracts/GLDToken.sol:GLDToken 1000000 | verify contract| 
+| npx hardhat flatten contracts/GLDToken.sol | for manual contract verification | 
+| npx hardhat accounts | run task accounts. Task is added to npx hardhat help | 
+| npx hardhat console [--no-compile] | open NodeJS JavaScript console with builtin config and ether objects | 
