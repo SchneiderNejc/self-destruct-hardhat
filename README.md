@@ -1,6 +1,4 @@
-A sample project serving as a compilation/deployment/testing hardhat framework, including settings, networks, api keys.
 
-Find the deployed contract addresses below.
 
 Sepolia
 ```
@@ -48,4 +46,6 @@ AvalancheTestnet
 ```
 gldToken 0x56ae34F87eA05752C0A071CF0bc15EC68625d6d1
 destruct 0x3A7C162b399E8719071B0A7a0595421D83b30aB6
-```
+```# Self-destruct
+# Self-destruct
+A sample project serving as a compilation/deployment/testing hardhat framework, including settings, networks, api keys, tasks and scripts.
